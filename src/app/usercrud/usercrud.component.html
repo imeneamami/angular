@@ -1,0 +1,32 @@
+<p>usercrud works!</p>
+<div class="container mt-4" >
+    <div class="card">
+            <h1>User Registation</h1>
+  
+    
+        <div class="container mt-4" >
+            <h1>user Table</h1>
+        <table class="table">
+            <thead>
+             <h1 *ngIf="!isResultLoaded">Loading.................</h1>      
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">user Name</th>
+                <th scope="col">email</th>  
+                <th scope="col">password</th>  
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userItem of userArray">
+                <td>{{userItem.id  }}</td>
+                <td>{{userItem.usernale }}</td>
+                <td>{{userItem.email }}</td>
+                <td>{{userItem.password }}</td>
+                <td>
+                  <button type="button" class="btn btn-success" (click)="setUpdate(userItem)">Edit</button>
+                  <button type="button" class="btn btn-danger" (click)="setDelete(userItem)">Delete</button>            
+                </td>
+              </tr>          
+            </tbody>
+          </table>
+        </div>
